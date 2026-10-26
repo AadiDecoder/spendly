@@ -30,3 +30,7 @@ Include sections
 4: use theme as its been used in the project
 
 git commit -m "landing: Added Privacy page"
+
+I have attached the screenshot of my new modified spendly hero section design.
+
+Modify only the hero section in @templates/landing.html page and @static/css/landing.css , to match the image alignment correct and do not touch any other part
