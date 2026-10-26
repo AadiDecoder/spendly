@@ -17,7 +17,7 @@
         </p>
         <div class="hero-actions">
             <a href="{{ url_for('register') }}" class="btn-primary">Create free account</a>
-            <a href="#" class="btn-ghost">See how it works</a>
+            <a href="#" class="btn-ghost" id="video-open" data-video-url="#">See how it works</a>
         </div>
     </div>
     <div class="hero-visual">
@@ -96,4 +96,68 @@
     </div>
 </section>
 
+<div class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="How Spendly works" hidden>
+    <div class="video-modal-content">
+        <button type="button" class="video-modal-close" id="video-close" aria-label="Close video">&times;</button>
+        <div class="video-modal-frame" id="video-frame"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function () {
+    var openBtn = document.getElementById('video-open');
+    var modal = document.getElementById('video-modal');
+    var frame = document.getElementById('video-frame');
+    var closeBtn = document.getElementById('video-close');
+
+    // Turns a YouTube watch / short / embed link into an embed URL, or returns null.
+    function toEmbedUrl(url) {
+        var m = url.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{11})/);
+        return m ? 'https://www.youtube.com/embed/' + m[1] + '?autoplay=1&rel=0' : null;
+    }
+
+    function openModal() {
+        var embed = toEmbedUrl(openBtn.getAttribute('data-video-url') || '');
+        if (embed) {
+            var iframe = document.createElement('iframe');
+            iframe.src = embed;
+            iframe.title = 'How Spendly works';
+            iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+            iframe.allowFullscreen = true;
+            frame.appendChild(iframe);
+        } else {
+            frame.innerHTML = '<p class="video-modal-empty">Video coming soon.</p>';
+        }
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+    }
+
+    // Removing the iframe stops playback, so nothing keeps running in the background.
+    function closeModal() {
+        modal.hidden = true;
+        frame.innerHTML = '';
+        document.body.style.overflow = '';
+        openBtn.focus();
+    }
+
+    openBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal();
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !modal.hidden) closeModal();
+    });
+})();
+</script>
 {% endblock %}

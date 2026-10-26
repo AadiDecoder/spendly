@@ -34,3 +34,13 @@ git commit -m "landing: Added Privacy page"
 I have attached the screenshot of my new modified spendly hero section design.
 
 Modify only the hero section in @templates/landing.html page and @static/css/landing.css , to match the image alignment correct and do not touch any other part
+
+git commit -m "Landing: modified as per new figma the hero section"
+
+5: 
+Now i need to make changes to get youtube video playable on the modal for : See How It Works inside @templates/landing.html
+Make Sure the below points.
+1: When user clicks then only a model pops up and video will get played
+2: if user clicks on modal video get paused and if user cancel or outside the modal , it disappears and video should not run in back ground.
+3: use vanilla js only , since we dont use any other libraries or dependencies.
+4: i will provide the youtube link later , for now place # placeholder
