@@ -1,0 +1,6 @@
+In `@template/base.html`, add two hyperlinks to the existing footer: **Terms and Conditions** and **Privacy Policy**, using `href="#"` as placeholders since both pages are not yet developed.
+highlight it as per the theme to show its clickable link
+
+Inspect the existing code first and make only the necessary changes. Preserve the current footer design, layout, template logic, and all existing functionality. Do not modify unrelated code or create new pages.
+
+After making the changes, briefly summarize what was modified and confirm that existing functionality remains unaffected.
