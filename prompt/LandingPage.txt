@@ -4,3 +4,15 @@ highlight it as per the theme to show its clickable link
 Inspect the existing code first and make only the necessary changes. Preserve the current footer design, layout, template logic, and all existing functionality. Do not modify unrelated code or create new pages.
 
 After making the changes, briefly summarize what was modified and confirm that existing functionality remains unaffected.
+
+git commit -m "landing: add terms and condition and privacy"
+
+now i need to make a page for terms and condition first and have to give some points to mention for my spendly app 
+
+write / add new route in app.py:
+GET /terms -> renders template/terms.html
+2: create templates/terms.html with generic terms and conditions.
+content appropriate for personal expense tracking app
+Include sections like : Acceptance of Terms , Use of Services , user Data , Limitations of Liability
+3: update the href to templates/terms.html inplace of #
+4: use theme as its been used in the project
