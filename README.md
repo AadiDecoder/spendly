@@ -1,0 +1,2 @@
+# spendly
+Using Claude 
