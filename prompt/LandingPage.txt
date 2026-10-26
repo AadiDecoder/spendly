@@ -16,3 +16,17 @@ content appropriate for personal expense tracking app
 Include sections like : Acceptance of Terms , Use of Services , user Data , Limitations of Liability
 3: update the href to templates/terms.html inplace of #
 4: use theme as its been used in the project
+
+git commit -m "landing: Added Terms and condition page"
+
+same we need to do for privacy policy.
+
+add new route in app.py
+Get /privacy -> renders template/privacy.html
+2: create templates/privacypolicy.html with generic terms and conditions.
+content appropriate for personal expense tracking app
+Include sections 
+3: update the href to templates/privacy.html inplace of #
+4: use theme as its been used in the project
+
+git commit -m "landing: Added Privacy page"
