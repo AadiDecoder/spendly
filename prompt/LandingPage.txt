@@ -44,3 +44,5 @@ Make Sure the below points.
 2: if user clicks on modal video get paused and if user cancel or outside the modal , it disappears and video should not run in back ground.
 3: use vanilla js only , since we dont use any other libraries or dependencies.
 4: i will provide the youtube link later , for now place # placeholder
+
+git commit -m "landing: added youtube video link for my landing page : how it works"
